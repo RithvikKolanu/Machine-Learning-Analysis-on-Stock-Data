@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <title>Stock Analysis</title>
+    </head>
+    <body>
+        <p id="paragraph"></p>
+        <canvas id="myChart" width="1600" height="600"></canvas>
+        <script>
+                var Xpred = {{ Xpred }};
+                var ypred = {{ ypred }};
+                var X_train = {{ X_train }};
+                var y_train = {{ y_train }};
+                var X_test = {{ X_test }};
+                var y_test = {{ y_test }};
+                console.log(Xpred);
+                console.log(ypred);
+                
+                
+                var ctx = document.getElementById("myChart");
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                    labels: X_train, X_test, Xpred,
+                    datasets: [
+                      {
+                        label: "prediction",
+                        borderColor: 'rgba(8, 123, 206, 1)',
+                        backgroundColor: "rgba(120, 183, 228, 0.3)",
+                        data: ypred,
+                      },
+                      {
+                        label: "Stock data",
+                        borderColor : '#70a288',
+                        data: y_train, 
+                        backgroundColor: "rgba(190, 212, 200, 0.3)",
+                      },
+                      {
+                        label: "Actual Data",
+                        borderColor:"#d5896f",
+                        data: y_test,
+                        backgroundColor: "rgba(232, 190, 176, 0.3)",
+                      }
+                    ]
+                  },
+                  options: {
+                    title: {
+                        display: true,
+                        text: "Stock Predictions"
+                    },
+                    legend: {
+                        display: true,
+                        labels: {
+                            
+                        }
+                    }
+                  }
+                });
+        </script>
+    </body>
+</html>

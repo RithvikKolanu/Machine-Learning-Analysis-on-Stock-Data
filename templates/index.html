@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Analysis</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Roboto+Mono&display=swap" rel="stylesheet"> 
+        <style>
+            body{
+                background-color: #97d8b2;
+            }    
+            #title{
+                font-family: 'Oswald', sans-serif;
+                font-size: 100px;
+                text-align: center;
+            }
+            #subtitle{
+                font-family: 'Roboto', sans-serif;
+                font-size: 40px;
+                text-align: center; 
+            }
+            #button {
+                background-color:#531253;
+                border-radius:28px;
+                border:1px solid #531253;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:17px;
+                padding:16px 31px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #531253;
+                font-family: 'Roboto', sans-serif;
+            }
+            #button:hover {
+                background-color:#33032f;
+            }
+            #button:active {
+                position:relative;
+                top:1px;
+            }
+            #wordfield{
+                outline: 0;
+                font-family: "Open Sans",sans-serif;
+                border: 1px solid rgba(255,255,255,.5);
+                box-shadow: 0 1px 10px rgba(0,0,0,.2),0 2px 4px 0 rgba(0,0,0,.1);
+                color: rgba(0,0,0,.7);
+                border-radius: 4px;
+                padding: 14px 16px;
+                margin-top: 50px;
+                width:  50%;
+                margin-left: 24%;
+                margin-right: 24%;
+                font-size: 50px;
+                font-family: 'Roboto Mono', monospace;
+            }
+            #buttonholder{
+                padding-top: 5%;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Predictions</h1>
+        <h3 id = "subtitle">Enter stock ticker</h3>
+        <form action="/prediction">
+            <input id="wordfield" name="text">
+            <div id="buttonholder">
+                <button id="button" type="submit">Enter</button>
+            </div>
+        </form>
+
+
+    </body>
+</html>
